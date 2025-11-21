@@ -1,0 +1,65 @@
+<nav class="p-4 w-full">
+  <ul class="menu bg-base-200 sm:menu-horizontal rounded-box">
+    <li>
+      <a class="btn mx-1"
+         [routerLink]="'/'">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24">
+          <path fill="currentColor"
+                d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75" />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a class="btn mx-1"
+         [routerLink]="'/paises/por-capital'"
+         [routerLinkActive]="'btn-primary'">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24">
+          <path fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 9h5.5a2.5 2.5 0 0 1 2.5 2.5v0a2.5 2.5 0 0 1-2.5 2.5h-4.02a1 1 0 0 0-.78.375l-3.4 4.25a1 1 0 0 1-.78.375H9.476a1 1 0 0 1-.928-1.371l.902-2.258A1 1 0 0 0 8.523 14H4.659a1 1 0 0 1-.919-.606l-2.143-5A1 1 0 0 1 2.517 7h1.865a1 1 0 0 1 .894.553l.448.894A1 1 0 0 0 6.618 9H10m5 0l-2.7-3.6a1 1 0 0 0-.8-.4H9.618a1 1 0 0 0-.894 1.447L10 9m5 0h-5" />
+        </svg>
+        Por Capital
+      </a>
+    </li>
+    <li>
+      <a class="btn mx-1"
+         [routerLink]="'/paises/por-pais'"
+         [routerLinkActive]="'btn-primary'">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24">
+          <path fill="currentColor"
+                d="M18.383 4.318a1 1 0 0 0-1.09.217a3.25 3.25 0 0 1-4.586 0a5.25 5.25 0 0 0-7.414 0A1 1 0 0 0 5 5.242v13a1 1 0 0 0 2 0v-4.553a3.25 3.25 0 0 1 4.293.26a5.25 5.25 0 0 0 7.414 0a1 1 0 0 0 .293-.707v-8a1 1 0 0 0-.617-.924m-7.09 1.631A5.25 5.25 0 0 0 17 7.087v2.311a3.746 3.746 0 0 1-4.646-.51C10.906 7.441 8.756 7.145 7 7.961V5.689a3.247 3.247 0 0 1 4.293.26m1.414 6.585A5.23 5.23 0 0 0 9 11.002c-.681 0-1.361.131-2 .394V9.085a3.746 3.746 0 0 1 4.646.51A4.73 4.73 0 0 0 15 10.981c.687 0 1.366-.164 2-.459v2.272a3.25 3.25 0 0 1-4.293-.26" />
+        </svg>
+        Por País
+      </a>
+    </li>
+    <li>
+      <a class="btn mx-1"
+         [routerLink]="'/paises/por-region'"
+         [routerLinkActive]="'btn-primary'">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24">
+          <path fill="currentColor"
+                d="m5 18.31l3-1.16V5.45L5 6.46zm11 .24l3-1.01V5.69l-3 1.17z"
+                opacity="0.3" />
+          <path fill="currentColor"
+                d="m20.5 3l-.16.03L15 5.1L9 3L3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1l5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5M8 17.15l-3 1.16V6.46l3-1.01zm6 1.38l-4-1.4V5.47l4 1.4zm5-.99l-3 1.01V6.86l3-1.16z" />
+        </svg>
+        Por Región
+      </a>
+    </li>
+  </ul>
+</nav>

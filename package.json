@@ -11,11 +11,13 @@
   "prettier": {
     "printWidth": 100,
     "singleQuote": true,
+    "htmlWhitespaceSensitivity": "ignore",
     "overrides": [
       {
         "files": "*.html",
         "options": {
-          "parser": "angular"
+          "parser": "angular",
+          "printWidth": 120
         }
       }
     ]

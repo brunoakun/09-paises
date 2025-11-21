@@ -17,3 +17,7 @@ npm install tailwindcss @tailwindcss/postcss postcss --force
 
 Instalar DaisyUI
 npm i -D daisyui@latest
+
+## iconos
+
+https://iconify.design/
