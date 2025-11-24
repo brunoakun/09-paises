@@ -1,1 +1,61 @@
-<p>pais-page works!</p>
+@if(loading()){
+
+<section class="flex flex-col items-center">
+  <span class="loading loading-dots loading-md"></span>
+</section>
+}
+
+
+
+
+@if(isError()){
+<section class="flex flex-col items-center ">
+  <span class="text-red-300">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="70"
+         height="70"
+         viewBox="0 0 24 24">
+      <path fill="currentColor"
+            d="M20 2H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h3v3.767L13.277 18H20c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2m0 14h-7.277L9 18.233V16H4V4h16z" />
+      <path fill="currentColor"
+            d="M11 6h2v5h-2zm0 6h2v2h-2z" />
+    </svg>
+  </span>
+
+
+  <span> {{ isError() }} </span>
+  <div class="text-green-600 cursor-pointer"><a routerLink="/paises">Volver</a></div>
+
+</section>
+}
+
+@if(pais()){
+
+<section>
+
+  <div>
+    <h1 class="text-3xl"> {{ pais()!.nombre }}</h1>
+    <h2 class="text-2xl">poblacion: {{ pais()!.poblacion | number }}</h2>
+  </div>
+
+  <div class=" ">
+    capital: {{ pais()!.capital }}
+  </div>
+
+  <div class=" ">
+    cca2: {{ pais()!.cca2 }}
+  </div>
+
+  <div class=" ">
+    <img src="{{ pais()!.bandera }}"
+         alt="bandera de {{ pais()!.nombre }}" />
+
+  </div>
+
+  <div class=" ">
+    Resumen: {{pais()|json}}
+  </div>
+
+
+</section>
+}

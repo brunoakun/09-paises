@@ -4,13 +4,14 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
-To start a local development server, run:
-
-```bash
 ng serve
-```
 
-## Aplicación con DaisyUI y TailwindCSS
+## Aplicación consulta API
+
+Signal, Resources, rxResources, Señales,Servicios
+Reutilización de componentes, Peticiones http, Operadores de RXJS
+
+## DaisyUI y TailwindCSS:
 
 Instalar tailwind
 npm install tailwindcss @tailwindcss/postcss postcss --force
@@ -18,6 +19,28 @@ npm install tailwindcss @tailwindcss/postcss postcss --force
 Instalar DaisyUI
 npm i -D daisyui@latest
 
-## iconos
+## iconos:
 
 https://iconify.design/
+
+## API de paises:
+
+https://restcountries.com/
+
+
+## crear variables de entorno:
+
+ng g environments
+eso crea el archivo src/environments/environment.ts con las variables de entorno, y el fileReplacements en el archivo angular.json
+
+## conponentes con tailwind:
+
+flowbite.com/docs/components/gallery
+
+## Ctrl + Shift + p -> Paste Json as Code
+
+Con esto crea un interface con el json copiado
+
+## Depurar la aplicación
+
+Marcar los BrackPoints en el código de Visual studio code y en la teminal pulsar F5

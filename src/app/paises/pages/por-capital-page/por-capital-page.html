@@ -1,5 +1,39 @@
-<!-- buscador -->
-<app-search-input [placeholder]="'Buscar por capital...'"></app-search-input>
+<div class="grid grid-cols-2 ">
+
+  <!-- col 1 -->
+  <div class=" ">
+
+    <!-- buscador -->
+    <app-search-input [placeholder]="'Buscar por capital...'"
+                      (txtBuscar)="buscar($event)"></app-search-input>
+  </div>
+
+  <!-- col 2 -->
+  <div class=" ">
+
+    @if(loading()) {
+    <span class="loading loading-dots loading-md"></span>
+    }
+
+    @if(paisesList().length > 0) {
+    <div role="alert"
+         class="alert alert-info alert-soft">
+      Se han encontrado {{ paisesList().length }} resultados.
+    </div>
+    }
+    @if(isError()) {
+    <div role="alert"
+         class="alert alert-error alert-soft">
+      <span> {{ isError() }}</span>
+    </div>
+    }
+
+  </div>
+
+</div>
+
+
+
 
 <!-- resultadosPaisesList -->
-<app-tabla-paises></app-tabla-paises>
+<app-tabla-paises [paisesList]="paisesList()"></app-tabla-paises>

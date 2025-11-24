@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TemasService } from '../../../paises/services/temas';
+import { TemasService } from '../../../paises/services/temas.service';
 
 @Component({
   selector: 'app-footer',

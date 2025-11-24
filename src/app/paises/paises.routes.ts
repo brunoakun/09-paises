@@ -15,12 +15,12 @@ export const paisesRoutes: Routes = [
         loadComponent: () => import('./pages/por-pais-page/por-pais-page').then(m => m.PorPaisPage)
       },
       {
-        path: ':iso',
-        loadComponent: () => import('./pages/pais-page/pais-page').then(m => m.PaisPage)
-      },
-      {
         path: 'por-region',
         loadComponent: () => import('./pages/por-region-page/por-region-page').then(m => m.PorRegionPage)
+      },
+      {
+        path: 'pais-ver/:codPais',
+        loadComponent: () => import('./pages/pais-page/pais-page').then(m => m.PaisPage)
       },
       {
         path: '**',

@@ -1,3 +1,4 @@
+@if(paisesList().length > 0) {
 <section class="mt-5">
   <table class="table w-full">
     <thead>
@@ -12,7 +13,38 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Aquí se mostrarán los resultados de la búsqueda -->
+      @for(pais of paisesList(); track $index) {
+      <tr>
+        <td>{{ $index + 1 }}</td>
+        <td>
+          <img [src]="pais.bandera"
+               [alt]="pais.nombre"
+               class="w-10" />
+        </td>
+        <td>
+          <img [src]="pais.bandera"
+               [alt]="pais.nombre"
+               class="w-20" />
+        </td>
+        <td>{{ pais.nombre }}</td>
+        <td>{{ pais.capital}}</td>
+        <td class="text-right">
+          <span class="badge badge-secondary">
+            {{ pais.poblacion | number }}
+          </span>
+        </td>
+        <td>
+          <a [routerLink]="'/paises/pais-ver/' + pais.cca2"
+             class="btn btn-primary">
+            Ver...
+          </a>
+        </td>
+
+      </tr>
+      }
     </tbody>
   </table>
 </section>
+
+
+}
