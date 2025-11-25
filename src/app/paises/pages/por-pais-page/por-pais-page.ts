@@ -1,7 +1,12 @@
+// componentes y módulos
 import { Component, inject, signal } from '@angular/core';
 import { SearchInput } from "../../components/search-input/search-input";
 import { TablaPaises } from "../../components/tabla-paises/tabla-paises";
+
+// servicios
 import { PaisesService } from '../../services/paises.service';
+
+// interfaces
 import { IPais } from '../../interfaces/pais';
 
 @Component({

@@ -4,4 +4,7 @@ export interface IPais {
   capital: string;
   poblacion: number;
   cca2: string;
+  area?: number;
+  pib?: number;
+  escudo?: string;
 }

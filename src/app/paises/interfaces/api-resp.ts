@@ -76,7 +76,7 @@ export interface Flags {
 }
 
 export interface Gini {
-  "2018": number;
+  anyo: number;
 }
 
 export interface Idd {

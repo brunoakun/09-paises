@@ -1,1 +1,14 @@
-<app-tabla-paises></app-tabla-paises>
+<section>
+  @for(region of regions; track $index) {
+
+  <button class="btn btn-xs  mx-1 w-[75px]"
+          (click)="buscar(region)"
+          [class.btn-primary]="region === regionSeleccionada()">
+    {{ region }}
+  </button>
+  }
+
+</section>
+
+
+<app-tabla-paises [paisesList]="paisesList()"></app-tabla-paises>

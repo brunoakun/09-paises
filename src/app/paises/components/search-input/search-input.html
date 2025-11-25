@@ -4,10 +4,12 @@
          [placeholder]="placeholder()"
          autofocus
          #txtBuscar
-         (keyup.enter)="buscar(txtBuscar.value)" />
+         (keyup.enter)="buscar(txtBuscar.value)"
+         (keyup)="valorTecleado.set(txtBuscar.value)" />
 
   <button class="btn btn-accent"
           (click)="buscar(txtBuscar.value)">
     Buscar
   </button>
+
 </section>

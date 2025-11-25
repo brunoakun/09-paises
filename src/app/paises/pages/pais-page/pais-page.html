@@ -31,11 +31,64 @@
 
 @if(pais()){
 
-<section>
+<section class=" place-items-center">
 
-  <div>
-    <h1 class="text-3xl"> {{ pais()!.nombre }}</h1>
-    <h2 class="text-2xl">poblacion: {{ pais()!.poblacion | number }}</h2>
+  <h1 class="text-3xl"> {{ pais()!.nombre }}</h1>
+
+  <div class="stats shadow  mt-3">
+
+    <div class="stat text-center">
+      <div class="stat-figure text-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="50"
+             height="50"
+             viewBox="0 0 20 20">
+          <g fill="currentColor"
+             fill-rule="evenodd"
+             clip-rule="evenodd">
+            <path d="M5 9a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6" />
+            <path d="M3.854 8.896a.5.5 0 0 1 0 .708l-.338.337A3.47 3.47 0 0 0 2.5 12.394v1.856a.5.5 0 1 1-1 0v-1.856a4.47 4.47 0 0 1 1.309-3.16l.337-.338a.5.5 0 0 1 .708 0m11.792-.3a.5.5 0 0 0 0 .708l.338.337A3.47 3.47 0 0 1 17 12.094v2.156a.5.5 0 0 0 1 0v-2.156a4.47 4.47 0 0 0-1.309-3.16l-.337-.338a.5.5 0 0 0-.708 0" />
+            <path d="M14 9a2 2 0 1 1 0-4a2 2 0 0 1 0 4m0 1a3 3 0 1 1 0-6a3 3 0 0 1 0 6m-4.5 3.25a2.5 2.5 0 0 0-2.5 2.5v1.3a.5.5 0 0 1-1 0v-1.3a3.5 3.5 0 0 1 7 0v1.3a.5.5 0 1 1-1 0v-1.3a2.5 2.5 0 0 0-2.5-2.5" />
+            <path d="M9.5 11.75a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6" />
+          </g>
+        </svg>
+      </div>
+      <div class="stat-title">Población</div>
+      <div class="stat-value">{{ pais()!.poblacion | number }}</div>
+      <div class="stat-desc">en {{currentYear()}}</div>
+    </div>
+
+    <div class="stat text-center">
+      <div class="stat-figure text-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="50"
+             height="50"
+             viewBox="0 0 24 24">
+          <path fill="currentColor"
+                d="M15 18.5A6.48 6.48 0 0 1 9.24 15H15l1-2H8.58c-.05-.33-.08-.66-.08-1s.03-.67.08-1H15l1-2H9.24A6.49 6.49 0 0 1 15 5.5c1.61 0 3.09.59 4.23 1.57L21 5.3A8.96 8.96 0 0 0 15 3c-3.92 0-7.24 2.51-8.48 6H3l-1 2h4.06a8.3 8.3 0 0 0 0 2H3l-1 2h4.52c1.24 3.49 4.56 6 8.48 6c2.31 0 4.41-.87 6-2.3l-1.78-1.77c-1.13.98-2.6 1.57-4.22 1.57" />
+        </svg>
+      </div>
+      <div class="stat-title">PIB</div>
+      <div class="stat-value">{{ pais()!.pib | number }}</div>
+      <div class="stat-desc">Millones de Euros</div>
+    </div>
+
+    <div class="stat text-center">
+      <div class="stat-figure text-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="32"
+             height="32"
+             viewBox="0 0 32 32">
+          <path fill="currentColor"
+                d="M27 22.142V9.858A3.992 3.992 0 1 0 22.142 5H9.858A3.992 3.992 0 1 0 5 9.858v12.284A3.992 3.992 0 1 0 9.858 27h12.284A3.992 3.992 0 1 0 27 22.142M26 4a2 2 0 1 1-2 2a2 2 0 0 1 2-2M4 6a2 2 0 1 1 2 2a2 2 0 0 1-2-2m2 22a2 2 0 1 1 2-2a2 2 0 0 1-2 2m16.142-3H9.858A4 4 0 0 0 7 22.142V9.858A4 4 0 0 0 9.858 7h12.284A4 4 0 0 0 25 9.858v12.284A3.99 3.99 0 0 0 22.142 25M26 28a2 2 0 1 1 2-2a2.003 2.003 0 0 1-2 2" />
+        </svg>
+      </div>
+      <div class="stat-title">Área</div>
+      <div class="stat-value">{{pais()!.area | number}}</div>
+      <div class="stat-desc">Km2</div>
+    </div>
+
+
   </div>
 
   <div class=" ">
@@ -46,15 +99,29 @@
     cca2: {{ pais()!.cca2 }}
   </div>
 
-  <div class=" ">
-    <img src="{{ pais()!.bandera }}"
-         alt="bandera de {{ pais()!.nombre }}" />
 
+
+  <div class="card bg-base-100 w-96 shadow-sm">
+    <figure class="px-10 pt-10">
+      <img src="{{ pais()!.bandera }}"
+           alt="Shoes"
+           class="rounded-xl" />
+    </figure>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">{{pais()!.nombre}}</h2>
+      <p>{{ pais()!.capital}}</p>
+
+    </div>
   </div>
 
-  <div class=" ">
-    Resumen: {{pais()|json}}
-  </div>
+
+  <section class="mx-10">
+    <h1 class="text-3xl">{{ pais!()?.nombre }}</h1>
+    <h2 class="text-xl font-thin">
+      Población {{ pais()!.poblacion | number }}
+    </h2>
+  </section>
+
 
 
 </section>

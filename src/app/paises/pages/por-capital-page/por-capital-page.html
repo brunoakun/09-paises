@@ -5,7 +5,8 @@
 
     <!-- buscador -->
     <app-search-input [placeholder]="'Buscar por capital...'"
-                      (txtBuscar)="buscar($event)"></app-search-input>
+                      (txtBuscar)="buscar($event)"
+                      [valorInicial]="query()"></app-search-input>
   </div>
 
   <!-- col 2 -->

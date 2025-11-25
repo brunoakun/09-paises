@@ -7,17 +7,32 @@ import { SearchInput } from "../../components/search-input/search-input";
 // servicios
 import { PaisesService } from '../../services/paises.service';
 import { IPais } from '../../interfaces/pais';
+import { JsonPipe } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-por-capital-page',
-  imports: [TablaPaises, SearchInput],
+  imports: [TablaPaises, SearchInput,],
   templateUrl: './por-capital-page.html',
   styleUrl: './por-capital-page.css',
 })
 export class PorCapitalPage {
   paisesSrv = inject(PaisesService);
-  query = signal('');
 
+  // mirar si se pasan parámetros en la URL
+  activatedRoute = inject(ActivatedRoute);
+  queryParam = this.activatedRoute.snapshot.queryParamMap.get('query') || '';
+
+  query = signal(this.queryParam);
+
+  ngOnInit() {
+
+    console.log('this.query', this.query());
+
+    if (this.queryParam.length > 0) {
+      this.buscar(this.query());
+    }
+  }
 
   loading = signal<boolean>(false);
   isError = signal<string | null>(null);
