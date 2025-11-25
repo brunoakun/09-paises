@@ -12,6 +12,7 @@ export class SearchInput {
   // señales de entrada y salida
   placeholder = input<string>('Buscar...');   // por defecto 'Buscar...'
   valorInicial = input<string>('');
+  tiempoDebounce = input<number>(500);
   txtBuscar = output<string>();
 
   // linkedSignal para inicializar una señal con un valor  computado de otra señal
@@ -23,7 +24,7 @@ export class SearchInput {
 
     const timeout = setTimeout(() => {
       this.txtBuscar.emit(this.valorTecleado());
-    }, 1000)
+    }, this.tiempoDebounce());
 
     oncleanUp(() => {
       clearTimeout(timeout);

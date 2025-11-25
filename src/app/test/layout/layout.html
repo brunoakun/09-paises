@@ -2,8 +2,17 @@
   <!-- Sidebar para desktop -->
   <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
     <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4">
-      <div class="flex h-16 shrink-0 items-center">
-        <h1 class="text-white text-xl font-bold">Tu App</h1>
+      <div class="flex h-16 shrink-0 items-center text-white">
+        <a [routerLink]="['/']">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="24"
+               height="24"
+               viewBox="0 0 24 24">
+            <path fill="currentColor"
+                  d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75" />
+          </svg>
+        </a>
+        <h1 class=" text-xl font-bold"> Tu App </h1>
       </div>
       <nav class="flex flex-1 flex-col">
         <ul role="list"

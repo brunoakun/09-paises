@@ -7,7 +7,6 @@ import { SearchInput } from "../../components/search-input/search-input";
 // servicios
 import { PaisesService } from '../../services/paises.service';
 import { IPais } from '../../interfaces/pais';
-import { JsonPipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -23,20 +22,21 @@ export class PorCapitalPage {
   activatedRoute = inject(ActivatedRoute);
   queryParam = this.activatedRoute.snapshot.queryParamMap.get('query') || '';
 
+  // ponemos el valor del parámetro en el signal
   query = signal(this.queryParam);
-
-  ngOnInit() {
-
-    console.log('this.query', this.query());
-
-    if (this.queryParam.length > 0) {
-      this.buscar(this.query());
-    }
-  }
 
   loading = signal<boolean>(false);
   isError = signal<string | null>(null);
   paisesList = signal<IPais[]>([]);
+
+  ngOnInit() {
+    // si no hay valor en el  signal, lo cogemos del localStorage
+    if (!this.query().length) {
+      this.query.set(localStorage.getItem('query-capital') || '');
+    }
+    console.log('Onit this.query:', this.query());
+  }
+
 
   buscar(txt: string) {
     if (this.loading()) return;
@@ -61,6 +61,8 @@ export class PorCapitalPage {
         }));
 
         this.paisesList.set(paises);
+        localStorage.setItem('query-capital', txt);
+
       },
       error: (err) => {
         this.loading.set(false);

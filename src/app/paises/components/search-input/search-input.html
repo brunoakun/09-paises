@@ -2,6 +2,7 @@
   <input type="text"
          class="input input-bordered mr-2 w-56"
          [placeholder]="placeholder()"
+         [value]="valorInicial()"
          autofocus
          #txtBuscar
          (keyup.enter)="buscar(txtBuscar.value)"

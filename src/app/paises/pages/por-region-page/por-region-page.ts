@@ -2,7 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { TablaPaises } from "../../components/tabla-paises/tabla-paises";
 import { IPais } from '../../interfaces/pais';
 import { PaisesService } from '../../services/paises.service';
-import { RouterLinkActive } from "@angular/router";
+
 
 @Component({
   selector: 'app-por-region-page',
@@ -21,6 +21,13 @@ export class PorRegionPage {
   loading = signal<boolean>(false);
   isError = signal<string | null>(null);
   paisesList = signal<IPais[]>([]);
+
+  ngOnInit() {
+    this.regionSeleccionada.set(localStorage.getItem('query-region') || '');
+    if (this.regionSeleccionada()) {
+      this.buscar(this.regionSeleccionada());
+    }
+  }
 
   buscar(txt: string) {
     if (this.loading()) return;
@@ -46,6 +53,7 @@ export class PorRegionPage {
         }));
 
         this.paisesList.set(paises);
+        localStorage.setItem('query-region', txt);
       },
       error: (err) => {
         this.loading.set(false);

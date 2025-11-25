@@ -11,7 +11,8 @@ ng serve
 1.- Signal, Resources, rxResources, Señales,Servicios
 2.- Reutilización de componentes, Peticiones http, Operadores de RXJS
 3.- Usar un debounceEffect para Buscar el valor tecleado automáticamante si este cambia, pero no buscar si hace menos de 500ms que no cambia
-4.- Crear un caché para guardar las busquedas anteriores
+4.- Crear un caché para guardar las busquedas anteriores y evitar llamadas a la API
+5.- Guardar en localStorage el texto tecleado en las búsquedas para que se pueda recuperar en el siguiente inicio de la app
 
 ## DaisyUI y TailwindCSS:
 
