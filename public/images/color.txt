@@ -1,0 +1,1 @@
+Primary: #67AC5B;Secondary:#353535, #D5B9B2, #A8F9FF;
